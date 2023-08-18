@@ -1,7 +1,7 @@
 {
-  "name": "vue3-workshop-template",
-  "version": "0.0.0",
-  "description": "",
+  "name": "vue3-dialog-template",
+  "version": "0.1.0",
+  "description": "dialog component",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,23 +16,25 @@
   "files": [
     "dist"
   ],
-
-  "author": "You github Name <> ()",
+  "author": "JiangWay <https://github.com/JiangWay> (https://github.com/JiangWay)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/JiangWay/vue3-dialog-template.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/JiangWay/vue3-dialog-template/issues"
   },
-  "homepage": "",
-  "keywords": [],
+  "homepage": "https://github.com/JiangWay/vue3-dialog-template",
+  "keywords": [
+    "vue3",
+    "dialog"
+  ],
   "dependencies": {
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
+    "vite": "^4.4.9"
   }
 }
