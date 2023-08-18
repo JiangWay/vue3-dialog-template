@@ -1,21 +1,43 @@
-import { ref as c, openBlock as l, createElementBlock as r, toDisplayString as s } from "vue";
-const a = (e, o) => {
-  const t = e.__vccOpts || e;
-  for (const [n, _] of o)
-    t[n] = _;
-  return t;
-}, p = {
+import { ref as _, openBlock as l, createElementBlock as a, toDisplayString as u, createElementVNode as s, withDirectives as p, vShow as i } from "vue";
+const r = (t, e) => {
+  const o = t.__vccOpts || t;
+  for (const [n, c] of e)
+    o[n] = c;
+  return o;
+}, d = {
   __name: "HelloWorld",
-  setup(e) {
-    const o = c(0), t = () => {
-      o.value++;
+  setup(t) {
+    const e = _(0), o = () => {
+      e.value++;
     };
-    return (n, _) => (l(), r("button", {
+    return (n, c) => (l(), a("button", {
       type: "button",
-      onClick: t
-    }, "count is " + s(o.value), 1));
+      onClick: o
+    }, "count is " + u(e.value), 1));
   }
-}, d = /* @__PURE__ */ a(p, [["__scopeId", "data-v-4a27bb39"]]);
+}, g = /* @__PURE__ */ r(d, [["__scopeId", "data-v-4a27bb39"]]);
+const v = { class: "blackBg" }, y = {
+  __name: "MyButton",
+  setup(t) {
+    const e = _(!1), o = () => {
+      console.log("isOpen"), e.value = !0;
+    }, n = () => {
+      e.value = !1;
+    };
+    return (c, b) => (l(), a("section", null, [
+      s("button", { onClick: o }, "open"),
+      p(s("div", v, [
+        s("button", {
+          onClick: n,
+          class: "close"
+        }, "Ｘ")
+      ], 512), [
+        [i, e.value]
+      ])
+    ]));
+  }
+}, m = /* @__PURE__ */ r(y, [["__scopeId", "data-v-23979931"]]);
 export {
-  d as HelloWord
+  g as HelloWord,
+  m as MyButton
 };
