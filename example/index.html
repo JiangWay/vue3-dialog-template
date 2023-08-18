@@ -9,11 +9,8 @@
   </head>
   <body>
     <div id="app">
-      <div class="warp">
-        <my-button>
-        </my-button>
-        <!-- <m-email-input v-model="message" :options="options"></m-email-input> -->
-      </div>
+        <button @click="openDialog">open</button>
+        <my-background v-show="isOpen" :is-open="isOpen" @close="closeDialog"></my-background>
     </div>
     <script type="importmap">
       {
@@ -24,21 +21,24 @@
     </script>
     <script type="module">
       import { createApp, ref } from "vue";
-      import { MyButton } from '../dist/MyLibrary.es.js'
+      import {  MyBackground } from '../dist/MyLibrary.es.js'
     //   import { MEmailInput } from "../dist/mike-vue-ui.es.js";
       createApp({
         components: {
-            MyButton,
+            MyBackground
         },
         setup() {
-          const message = ref("");
-
-          const options = {
-            suffix: ["@gmail.com", "@hotmail.com", "@yahoo.com"],
-          };
+            const isOpen = ref(false)
+            const openDialog = () => {
+                isOpen.value = true
+            }
+            const closeDialog = (close) => {
+                isOpen.value = close
+            }
           return {
-            message,
-            options,
+            isOpen,
+            openDialog,
+            closeDialog
           };
         },
       }).mount("#app");

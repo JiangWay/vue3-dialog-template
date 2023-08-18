@@ -1,43 +1,38 @@
-import { ref as _, openBlock as l, createElementBlock as a, toDisplayString as u, createElementVNode as s, withDirectives as p, vShow as i } from "vue";
-const r = (t, e) => {
+import { ref as a, openBlock as s, createElementBlock as n, toDisplayString as r, createElementVNode as d } from "vue";
+const l = (t, e) => {
   const o = t.__vccOpts || t;
-  for (const [n, c] of e)
-    o[n] = c;
+  for (const [c, _] of e)
+    o[c] = _;
   return o;
-}, d = {
+}, p = {
   __name: "HelloWorld",
   setup(t) {
-    const e = _(0), o = () => {
+    const e = a(0), o = () => {
       e.value++;
     };
-    return (n, c) => (l(), a("button", {
+    return (c, _) => (s(), n("button", {
       type: "button",
       onClick: o
-    }, "count is " + u(e.value), 1));
+    }, "count is " + r(e.value), 1));
   }
-}, g = /* @__PURE__ */ r(d, [["__scopeId", "data-v-4a27bb39"]]);
-const v = { class: "blackBg" }, y = {
-  __name: "MyButton",
-  setup(t) {
-    const e = _(!1), o = () => {
-      console.log("isOpen"), e.value = !0;
-    }, n = () => {
-      e.value = !1;
+}, v = /* @__PURE__ */ l(p, [["__scopeId", "data-v-4a27bb39"]]);
+const u = { class: "black-bg" }, i = {
+  __name: "MyBackground",
+  props: ["isOpen"],
+  emits: "close",
+  setup(t, { emit: e }) {
+    const o = () => {
+      e("close", !1);
     };
-    return (c, b) => (l(), a("section", null, [
-      s("button", { onClick: o }, "open"),
-      p(s("div", v, [
-        s("button", {
-          onClick: n,
-          class: "close"
-        }, "Ｘ")
-      ], 512), [
-        [i, e.value]
-      ])
+    return (c, _) => (s(), n("div", u, [
+      d("button", {
+        onClick: o,
+        class: "close"
+      }, "Ｘ")
     ]));
   }
-}, m = /* @__PURE__ */ r(y, [["__scopeId", "data-v-23979931"]]);
+}, m = /* @__PURE__ */ l(i, [["__scopeId", "data-v-4d5b9b99"]]);
 export {
-  g as HelloWord,
-  m as MyButton
+  v as HelloWord,
+  m as MyBackground
 };

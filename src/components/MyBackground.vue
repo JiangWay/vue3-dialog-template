@@ -1,27 +1,20 @@
 <script setup>
-import { ref } from "vue";
-const isOpen = ref(false)
-const openDialog = () => {
-  console.log('isOpen')
-    isOpen.value = true
-}
-
+import { defineEmits, defineProps } from 'vue'
+const props = defineProps(['isOpen'])
+const emits = defineEmits('close')
 const closeDialog = () => {
-  isOpen.value = false
+    emits('close', false)
 }
 </script>
 
 <template>
-  <section>
-    <button @click="openDialog">open</button>
-    <div v-show="isOpen" class="blackBg">
-      <button @click="closeDialog" class="close">Ｘ</button>
+    <div class="black-bg">
+        <button @click="closeDialog" class="close">Ｘ</button>
     </div>
-  </section>
 </template>
 
 <style scoped>
-.blackBg {
+.black-bg {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
@@ -30,6 +23,7 @@ const closeDialog = () => {
   bottom: 0;
   left: 0;
   right: 0;
+  backdrop-filter: blur(10px);
 }
 
 .close {
@@ -43,4 +37,5 @@ const closeDialog = () => {
   right: 20px;
   top:20px;
 }
+
 </style>
